@@ -1,4 +1,5 @@
-FROM ruby:2.5
+# FROM ruby:2.5
+FROM starefossen/ruby-node
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN bundle config --global frozen 1
@@ -10,4 +11,4 @@ RUN bundle install
 
 COPY . .
 
-CMD ["rails s"]
+CMD ["./bin/rails","s"]
